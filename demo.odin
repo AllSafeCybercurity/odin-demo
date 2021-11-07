@@ -51,7 +51,7 @@ main :: proc() {
 	}
 	
 	vertices := []Vertex{
-		{{-0.5, +0.5, 0}, {1.0, 0.0, 0.0, 0.75}},
+		{pos={-0.5, +0.5, 0}, col={1.0, 0.0, 0.0, 0.75}},
 		{{-0.5, -0.5, 0}, {1.0, 1.0, 0.0, 0.75}},
 		{{+0.5, -0.5, 0}, {0.0, 1.0, 0.0, 0.75}},
 		{{+0.5, +0.5, 0}, {0.0, 0.0, 1.0, 0.75}},
@@ -135,7 +135,7 @@ main :: proc() {
 		gl.UniformMatrix4fv(uniforms["u_transform"].location, 1, false, &u_transform[0, 0])
 		
 		gl.Viewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT)
-		gl.ClearColor(0.5, 0.7, 1.0, 1.0)
+		gl.ClearColor(0.0, 0.0, 0.0, 1.0)
 		gl.Clear(gl.COLOR_BUFFER_BIT)
 		
 		gl.DrawElements(gl.TRIANGLES, i32(len(indices)), gl.UNSIGNED_SHORT, nil)
